@@ -1,0 +1,85 @@
+:root {
+  color-scheme: light;
+  line-height: 1.5;
+  --padding: 15px;
+  --gap-padding: 10px;
+  --bg-color: #fff;
+  --send-color: #fff;
+  --text-color: #444;
+  --title-color: #000;
+  --code-text-color: #fff;
+  --code-bg-color: rgba(0, 0, 0, 0.8);
+  --msg-bg-color: #ddd;
+}
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+  border-radius: 2px;
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background: rgba(88, 88, 88, 0.6);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(88, 88, 88, 0.8);
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg-color);
+}
+pre {
+  background-color: var(--code-bg-color);
+  color: var(--code-text-color);
+  padding: 10px;
+  border-radius: 10px;
+  overflow-x: auto;
+  max-width: 900px;
+}
+p {
+  display: block;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+}
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 1em;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+#app {
+  max-width: 650px;
+  margin: 0 auto;
+}
+a{
+  color: var(--text-color);
+}
+.dark {
+  --bg-color: #333;
+  --text-color: #ccc;
+  --title-color: #fff;
+  --send-color: #333;
+  --code-text-color: #ccc;
+  --code-bg-color: rgba(0, 0, 0, 0.6);
+  --msg-bg-color: rgba(0, 0, 0, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #333;
+    --text-color: #ccc;
+    --title-color: #fff;
+    --send-color: #333;
+    --code-text-color: #ccc;
+    --code-bg-color: rgba(0, 0, 0, 0.6);
+    --msg-bg-color: rgba(0, 0, 0, 0.3);
+  }
+}
