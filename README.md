@@ -4,7 +4,7 @@
 
 ## Demo
 
-[chatgpt-online demo](https://weekendproject.space/chat-gpt-online.html)
+[chatgpt-online](https://weekendproject.space/chat-gpt-online.html)
 
 ## Use
 ```
