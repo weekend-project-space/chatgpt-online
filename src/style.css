@@ -67,6 +67,10 @@ button {
 a{
   color: var(--text-color);
 }
+.msg img{
+    max-width: 100%;
+  
+}
 .dark {
   --bg-color: #222;
   --text-color: #ccc;

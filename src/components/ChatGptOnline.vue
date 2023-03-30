@@ -126,7 +126,7 @@ const action = async (a) => {
     content: a,
   });
   loginKey.value = "";
-  if (a == "免费试用10次") {
+  if (a == "免费试用10次" || a == "登陆") {
     loginDialog.value = true;
     rep("请登陆");
   } else if (a == "输入卡密") {
@@ -166,10 +166,23 @@ const submitSend = async (prompt) => {
   try {
     await sending(prompt);
   } catch (e) {
-    console.log(e);
+    let content = "这会有点累了，等会再问吧，或者换一下右上角的chatgpt api key";
+    let meta = null;
+    if (e.status == 500) {
+      content = e.responseText;
+      if (content == "可用次数不足") {
+        meta = { actions: ["获取更多"] };
+      }
+    } else if (e.status == 401) {
+      content = "请重新登陆";
+      meta = { actions: ["登陆"] };
+    } else {
+      console.log(e);
+    }
     data.push({
       role: "chatgpt",
-      content: "这会有点累了，等会再问吧，或者换一下右上角的chatgpt api key",
+      content,
+      meta,
     });
   }
   scrollToBottom();

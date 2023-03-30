@@ -3,7 +3,8 @@ import {
     post
 } from '../utils/request'
 
-const base = 'https://api.bitmagic.space/'
+// const base = 'http://localhost:8080'
+const base = 'https://api.bitmagic.space'
 
 export function auth(email) {
     return post(base + '/auth?email=' + email)
