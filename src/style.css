@@ -3,13 +3,14 @@
   line-height: 1.5;
   --padding: 15px;
   --gap-padding: 10px;
-  --bg-color: #fff;
+  --bg-color: #f6f6f6;
   --send-color: #fff;
   --text-color: #444;
   --title-color: #000;
   --code-text-color: #aaa;
   --code-bg-color: rgba(0, 0, 0, 0.8);
-  --msg-bg-color: #ddd;
+  --msg-bg-color: #fff;
+  --msg-box-color: #ddd;
 }
 /* 设置滚动条的样式 */
 ::-webkit-scrollbar {
@@ -79,6 +80,7 @@ a{
   --code-text-color: #ccc;
   --code-bg-color: rgba(0, 0, 0, 0.6);
   --msg-bg-color: rgba(0, 0, 0, 0.3);
+  --msg-box-color: rgba(0, 0, 0, 0.3);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -90,5 +92,6 @@ a{
     --code-text-color: #ccc;
     --code-bg-color: rgba(0, 0, 0, 0.6);
     --msg-bg-color: rgba(0, 0, 0, 0.3);
+    --msg-box-color: rgba(0, 0, 0, 0.3);
   }
 }

@@ -790,8 +790,8 @@ const inviteLink = async () => {
   align-items: center;
   grid-gap: var(--gap-padding);
   border-radius: var(--gap-padding);
-  box-shadow: 3px 3px 10px var(--msg-bg-color),
-    -3px -3px 10px var(--msg-bg-color);
+  box-shadow: 3px 3px 10px var(--msg-box-color),
+    -3px -3px 10px var(--msg-box-color);
   // border: 1px solid #eee;
   .textarea {
     color: var(--text-color);
