@@ -1,9 +1,12 @@
+import {
+    getItem
+} from "./storage";
 export function get(url, config) {
     return request(url, 'GET', config)
 }
 
 export function post(url, data, config) {
-    return request(url, 'POST', JSON.stringify(data), config)
+    return request(url, 'POST', data ? JSON.stringify(data) : null, config)
 }
 
 
@@ -15,7 +18,7 @@ function request(url, method, data, config) {
         xhr.onreadystatechange = () => {
             if (xhr.readyState == 4) {
                 if (xhr.status == 200) {
-                    resolve(JSON.parse(xhr.responseText))
+                    resolve(((xhr.responseText.indexOf("{") == 0 || xhr.responseText.indexOf("[") == 0) && JSON.parse(xhr.responseText)) || xhr.responseText)
                 } else {
                     reject(xhr)
                 }
@@ -34,6 +37,10 @@ function initConfig(xhr, config) {
                 xhr.setRequestHeader(k, config.headers[k])
             }
         }
+    }
+    let d = getItem('userInfo')
+    if (d) {
+        xhr.setRequestHeader('Authorization', 'Bearer ' + JSON.parse(d).token)
     }
 
 }

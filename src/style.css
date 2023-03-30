@@ -7,7 +7,7 @@
   --send-color: #fff;
   --text-color: #444;
   --title-color: #000;
-  --code-text-color: #fff;
+  --code-text-color: #aaa;
   --code-bg-color: rgba(0, 0, 0, 0.8);
   --msg-bg-color: #ddd;
 }
@@ -41,8 +41,12 @@ pre {
   padding: 10px;
   border-radius: 10px;
   overflow-x: auto;
-  max-width: 900px;
+  max-width: 600px;
 }
+blockquote{
+  color: var(--code-text-color);
+}
+
 p {
   display: block;
   margin-block-start: 0.5em;
@@ -54,6 +58,7 @@ button {
   font-size: 1em;
   cursor: pointer;
   transition: border-color 0.25s;
+  padding: 0.3rem 1rem;
 }
 #app {
   max-width: 650px;
@@ -63,10 +68,10 @@ a{
   color: var(--text-color);
 }
 .dark {
-  --bg-color: #333;
+  --bg-color: #222;
   --text-color: #ccc;
   --title-color: #fff;
-  --send-color: #333;
+  --send-color: #222;
   --code-text-color: #ccc;
   --code-bg-color: rgba(0, 0, 0, 0.6);
   --msg-bg-color: rgba(0, 0, 0, 0.3);
@@ -74,10 +79,10 @@ a{
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: #333;
+    --bg-color: #222;
     --text-color: #ccc;
     --title-color: #fff;
-    --send-color: #333;
+    --send-color: #222;
     --code-text-color: #ccc;
     --code-bg-color: rgba(0, 0, 0, 0.6);
     --msg-bg-color: rgba(0, 0, 0, 0.3);
