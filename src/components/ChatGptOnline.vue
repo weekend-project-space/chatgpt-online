@@ -303,8 +303,10 @@ const login = async () => {
     code.value = "";
     loginKey.value = "";
     loginDialog.value = false;
-    ticket();
     setItem({ userInfo: JSON.stringify(userInfo.value) });
+    setTimeout(() => {
+      ticket();
+    }, 1000);
   } catch (e) {
     tip.value = "登陆失败请重新检测验证码";
     setTimeout(() => {
