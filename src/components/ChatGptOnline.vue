@@ -39,6 +39,7 @@ const loginDialog = ref(false);
 const chatPanelRef = ref();
 
 const chans = ref([
+  "https://api.bitmagic.space/bootstrap-gpt/chat/completions",
   "https://chatgpt-api.shn.hk/v1/",
   "https://api.openai.com/v1/chat/completions",
 ]);
