@@ -11,6 +11,7 @@
   --code-bg-color: rgba(0, 0, 0, 0.8);
   --msg-bg-color: #fff;
   --msg-box-color: #ddd;
+  --max-width:650px;
 }
 /* 设置滚动条的样式 */
 ::-webkit-scrollbar {
@@ -62,7 +63,7 @@ button {
   padding: 0.3rem 1rem;
 }
 #app {
-  max-width: 650px;
+  max-width: var(--max-width);
   margin: 0 auto;
 }
 a{

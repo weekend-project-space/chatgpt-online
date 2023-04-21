@@ -39,7 +39,8 @@ const loginDialog = ref(false);
 const chatPanelRef = ref();
 
 const chans = ref([
-  "https://api.bitmagic.space/bootstrap-gpt/chat/completions",
+  "http://localhost:9981/v1/chat/completions",
+  "http://api.bitmagic.space/bgpt/v1/chat/completions",
   "https://chatgpt-api.shn.hk/v1/",
   "https://api.openai.com/v1/chat/completions",
 ]);
@@ -117,8 +118,8 @@ const send = () => {
   submitSend(prompt);
   input.value = "";
   setTimeout(() => {
-    document.getElementsByTagName("textarea")[0].value = "";
-  }, 500);
+    input.value = "";
+  }, 100);
 };
 
 const action = async (a) => {
@@ -185,8 +186,8 @@ const submitSend = async (prompt) => {
       content,
       meta,
     });
+    scrollToBottom();
   }
-  scrollToBottom();
   loading.value = false;
 };
 
@@ -237,6 +238,11 @@ const rep = (r, meta) => {
     meta,
   });
   const j = data.length - 1;
+  if (r.length > 3000) {
+    data[j].content = r;
+    // scrollToBottom();
+    return;
+  }
   for (let i = 0; i < r.length; i++) {
     setTimeout(() => {
       data[j].content += r.charAt(i);
@@ -697,7 +703,7 @@ const inviteLink = async () => {
     // background: rgba(0, 0, 0, 0.1);
     // border: 1px solid #ccc;
     display: grid;
-    grid-template-columns: 36px auto 36px;
+    grid-template-columns: 36px minmax(auto, calc(var(--max-width) - 120px)) 36px;
     grid-gap: var(--gap-padding);
     padding: 0.5rem 0;
     border-radius: 1rem;
