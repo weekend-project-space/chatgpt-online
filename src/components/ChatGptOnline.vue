@@ -65,7 +65,8 @@ onMounted(async () => {
         data.push(rec);
       });
     }
-    key.value = getItem("chatGptApiKey");
+    key.value =
+      getItem("chatGptApiKey") || "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
     activeChan.value = getItem("activeChan") || chans.value[0];
     let d = getItem("userInfo");
     if (d) {
