@@ -361,6 +361,9 @@ const inviteLink = async () => {
           >基于gpt-3.5-turbo, 数据存放在本地
           <a href="https://github.com/weekend-project-space/chatgpt-online"
             >查看源码</a
+          >&nbsp;<a
+            href="https://github.com/weekend-project-space/bootstrap-gpt"
+            >后台源码</a
           ></small
         >
       </div>
